@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
+<style type="text/css" >
+    li.c1 { color: red }
+    span.c1 { color : red }
+</style>
+<h:head>
+    <title>Support technique</title>
+</h:head>
+<h:body>
+    <p><h:messages /></p>
+    <h:form id="f" >
+        <h:panelGrid columns="2">
+            <h:outputText value="Support technique"/>
+            <h:outputText value="Société PC maintenance" />
+            <h:outputText value="#{msg.prenom}" />
+            <h:inputText label="Prenom" id="fprenom" value="#{hotline.prenom}"
+            requiredMessage="champs requis" required="true" > <f:validateRegex pattern="[a-zA-Z]*"/>
+            </h:inputText>
+            <h:outputText value="#{msg.nom}" />
+            <h:panelGroup>
+            <h:inputText label="Nom" id="fnom" value="#{hotline.nom}"
+            required="true" > <f:validateRegex pattern="[a-zA-Z]*"/> </h:inputText>
+            <h:message for ="fnom" errorClass="c1" />
+            </h:panelGroup>
+
+            <h:outputText value="Téléphone" />
+            <h:inputText label="Téléphone" id="ftelephone" value="#{hotline.telephone}"
+            required="true" > <f:validateRegex pattern="[0-9]*"/> </h:inputText>
+            <h:commandButton value="valider" action="#{hotline.inscrireClient(
+            )}" />
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html> 
