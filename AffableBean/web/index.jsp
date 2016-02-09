@@ -14,7 +14,7 @@
                 <div id="welcomeText">
                     <p>[ welcome text ]</p>
                     
-                    <!testto access context parameters >
+                    <!-- test to access context parameters -->
                     categoryImagePath: ${initParam.categoryImagePath}
                     productImagePath: ${initParam.productImagePath}
                 </div>
